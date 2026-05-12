@@ -1,0 +1,649 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{cite}
+\usepackage{authblk}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{remark}{Remark}
+\newtheorem{definition}{Definition}
+
+\title{The $\mathcal{N}_{\mathrm{esc}}$ Recipe: \\
+A Cross-Regime Observation of Bekenstein-Bound Saturation from the Static Escrow Construction $|U|/T$}
+
+\author[1]{Grant Lavell Whitmer III}
+\affil[1]{Windstorm Institute, Fort Ann, NY 12827, USA}
+\affil[ ]{\texttt{ORCID: 0009-0007-3224-755X}}
+
+\date{Version 1.3 \\ May 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We propose a static escrow framework for gravitational entropy in which the basic ratio $S_{\mathrm{esc}} = |U|/T$ — gravitational binding energy divided by characteristic temperature — produces the Bekenstein-bound saturation form $\mathcal{N}_{\mathrm{esc}}(E, L) \equiv 2\pi E L/(\hbar c)$ across three distinct regimes: (i) a test mass in Schwarzschild geometry at the horizon limit, (ii) the Bekenstein-Hawking entropy of a black-hole horizon via the Smarr formula, and (iii) the entanglement-entropy change of a localized matter configuration in a Rindler wedge. The dimensionless count $\mathcal{N}_{\mathrm{esc}}(E, L)$ is identical in form to the Bekenstein-bound saturation value; what the framework names is the \emph{recipe} by which $(E, L)$ are extracted from $|U|/T$ in each gravitational regime. The same one-function recipe, applied across three qualitatively distinct settings, evaluates to the Bekenstein form in each. For regime (iii), we identify the framework's prediction with Casini's quantum-field-theoretic derivation of the Bekenstein bound. We provide first-principles lattice verification of the Rindler-wedge inequality across mass-perturbation and Compton-wavepacket protocols, lattice sizes $N \in [200, 1200]$, and perturbation strengths $m_{\mathrm{pert}}^2 \in [0.5, 5.0]$ spanning one order of magnitude. The maximum observed saturation is $5.4\%$ at the Compton scale. The framework is an organizing observation, not a derivation: each regime's prediction follows from a standard continuum result (Bisognano-Wichmann theorem, Smarr formula, Bekenstein bound), while the framework's contribution is the unifying observation that the same recipe $|U|/T$ generates the Bekenstein form in all three. The present work is the fifth deposit in the Windstorm Institute gravitational entropy escrow series \cite{Whitmer2026Phonon, Whitmer2026Escrow, Whitmer2026C8, Whitmer2026Lattice, Whitmer2026Translation} and formalizes the cross-regime $\mathcal{N}_{\mathrm{esc}}$ notation introduced in \cite{Whitmer2026Translation}.
+\end{abstract}
+
+\section{Introduction}
+
+The Bekenstein bound \cite{Bekenstein1981} asserts that the entropy contained in any region of size $R$ with total energy $E$ is bounded by:
+\begin{equation}
+S \leq \frac{2\pi E R}{\hbar c}.
+\label{eq:bekenstein}
+\end{equation}
+This bound, originally motivated by black-hole thermodynamics, has since been derived from quantum field theory by Casini \cite{Casini2008}, who showed that for a localized configuration in a Rindler wedge, the entanglement-entropy change $\Delta S_{\mathrm{EE}}$ satisfies precisely the form of Eq.~\ref{eq:bekenstein}.
+
+In parallel, the Bisognano-Wichmann theorem \cite{BisognanoWichmann1975, BisognanoWichmann1976} identifies the vacuum modular Hamiltonian of a half-space cut in Minkowski space with the boost generator, providing the structural backbone for understanding entanglement in relativistic field theory. The Smarr formula \cite{Smarr1973} expresses the mass of a stationary black hole as a sum of horizon contributions weighted by intensive thermodynamic variables.
+
+The present work observes that these three results — Bekenstein bound for matter, Bekenstein-Hawking entropy from Smarr, and the BW-Casini bound for entanglement — share a common structural form: the ratio of energy to temperature, $S = E/T$, where $T$ is the characteristic temperature of the relevant horizon (Hawking, Unruh) and $E$ is the total energy of the configuration.
+
+We propose to call this the \emph{static escrow ratio}:
+\begin{equation}
+S_{\mathrm{esc}} = \frac{|U|}{T},
+\label{eq:escrow}
+\end{equation}
+where ``escrow'' is a deliberately neutral label for the dimensionless entropy-capacity quantity extracted by evaluating the ratio $|U|/T$ within a regime-specific thermodynamic sector; we do not attach any dynamical or ontological commitment to the term in the present work. We examine the behavior of $S_{\mathrm{esc}}$ across three regimes. In each, $S_{\mathrm{esc}}$ takes the Bekenstein-bound saturation form $2\pi E R/(\hbar c)$ with appropriate identifications. The static escrow postulate was introduced as a physical reframing of gravitational binding energy in \cite{Whitmer2026Escrow}, where it was used to organize Newton's law, Bekenstein-Hawking entropy, the equivalence principle, and the deep-MOND Tully-Fisher relation under a single bookkeeping picture. The present work isolates a specific structural consequence of that postulate — the cross-regime appearance of the Bekenstein form — and formalizes it as the function-and-recipe pair described in \S\ref{sec:Nesc_family}.
+
+\paragraph{Relation to prior work in this series.} The framework's empirical content has been examined in four prior preprints. \cite{Whitmer2026Lattice} reports a direct lattice quantum field theory test of the literal bipartition-entropy reading of the postulate (falsified in both 1+1D and 3+1D) and of the modular-Hamiltonian reading (partial survival in 1+1D, with a small-$d_1$ window producing a prefactor $\approx 1/30$ of the literal Bisognano-Wichmann value). \cite{Whitmer2026C8} examines a candidate covariant extension that turned out to be algebraically identical to a 1981 Bekenstein result. \cite{Whitmer2026Phonon} derives a non-equilibrium efficiency bound for Bose-Einstein condensate analog gravity from a Verlinde-based construction in the same thermodynamic family. \cite{Whitmer2026Translation} translates four standard general-relativistic results (gravitational time dilation, Tolman temperature law \cite{Tolman1930}, Bekenstein-Hawking entropy \cite{Hawking1975}, Jacobson's thermodynamic derivation of Einstein's equations \cite{Jacobson1995}) into the escrow vocabulary, and introduces the working notation $\mathcal{N}_{\mathrm{esc}}$ for the dimensionless escrow count in the test-mass and black-hole sectors. The present work refines that notation by formalizing $\mathcal{N}_{\mathrm{esc}}$ as a single two-argument function (\S\ref{sec:Nesc_family}) and extending the cross-regime structure to the localized-perturbation sector via Casini's bound.
+
+\subsection{The $\mathcal{N}_{\mathrm{esc}}$ function and the escrow recipe}
+\label{sec:Nesc_family}
+
+When $S_{\mathrm{esc}} = |U|/T$ is reduced to dimensionless form, every regime examined in this work produces a value of the same two-argument function:
+\begin{equation}
+\boxed{\quad\mathcal{N}_{\mathrm{esc}}(E, L) \,\equiv\, \frac{2\pi \, E \, L}{\hbar c}\quad}
+\label{eq:Nesc_definition}
+\end{equation}
+where $E$ has units of energy and $L$ has units of length. We call $\mathcal{N}_{\mathrm{esc}}$ the \emph{escrow count}. It is dimensionless and is identical in form to the Bekenstein-bound saturation value $S_{\mathrm{Bek}}(E, L)$.
+
+\paragraph{What is named, and what is not.} The numerical value of $\mathcal{N}_{\mathrm{esc}}(E, L)$ has been known since \cite{Bekenstein1981}; we make no claim of priority for the combination $2\pi E L/(\hbar c)$. (A separate methodological lesson on the importance of checking proposed escrow extensions against the 1981 Bekenstein literature is documented in \cite{Whitmer2026C8}, where a candidate covariant extension was shown to be algebraically identical to a 1981 Bekenstein result.) What the escrow framework names is the \emph{recipe} by which $(E, L)$ are extracted in each gravitational regime — namely, the static escrow construction
+\begin{equation}
+S_{\mathrm{esc}} = \frac{|U|}{T} \;\longrightarrow\; (E, L)_{\text{regime}} \;\longrightarrow\; \mathcal{N}_{\mathrm{esc}}(E, L),
+\label{eq:escrow_recipe}
+\end{equation}
+where $|U|$ is the regime's gravitational binding energy and $T$ is the relevant horizon (Hawking, Unruh) temperature. The two arrows denote the two-step recipe: first, the regime's $|U|/T$ construction is decomposed into an energy $E$ and a length $L$ (regime-specific identification); second, the Bekenstein-form function $\mathcal{N}_{\mathrm{esc}}(E, L) = 2\pi E L/(\hbar c)$ is evaluated at those arguments. The framework's content is the observation that this recipe, applied across qualitatively distinct gravitational regimes, always lands on the Bekenstein-bound saturation value $\mathcal{N}_{\mathrm{esc}}(E, L)$. The function is Bekenstein's; the recipe is the framework's.
+
+\paragraph{The three regime evaluations.} Each of the regimes treated in this work corresponds to a specific $(E, L)$ at which the escrow function is evaluated by the recipe in Eq.~\ref{eq:escrow_recipe}:
+\begin{equation}
+\mathcal{N}_{\mathrm{esc}}^{\mathrm{(II)}} = \mathcal{N}_{\mathrm{esc}}\!\left(mc^2,\, r_s\right) = \frac{2\pi r_s}{\bar{\lambda}_C},
+\label{eq:Nesc_II_eval}
+\end{equation}
+\begin{equation}
+\mathcal{N}_{\mathrm{esc}}^{\mathrm{(III)}} = \mathcal{N}_{\mathrm{esc}}\!\left(Mc^2,\, r_s\right) = \frac{A}{4\ell_P^2} = 4\pi\!\left(\frac{M}{m_P}\right)^{\!2},
+\label{eq:Nesc_III_eval}
+\end{equation}
+\begin{equation}
+\mathcal{N}_{\mathrm{esc}}^{\mathrm{(IV)}} = \mathcal{N}_{\mathrm{esc}}(\Delta E_A,\, d) = \frac{2\pi \, \Delta E_A \, d}{\hbar c}.
+\label{eq:Nesc_IV_eval}
+\end{equation}
+Here $\bar{\lambda}_C = \hbar/(mc)$ is the test mass's reduced Compton wavelength, $m_P = \sqrt{\hbar c/G}$ is the Planck mass, $\ell_P = \sqrt{\hbar G/c^3}$ is the Planck length, and $\Delta E_A$, $d$ are the localized-perturbation energy and characteristic distance of \S\ref{sec:localized}. Equations~\ref{eq:Nesc_II_eval}--\ref{eq:Nesc_IV_eval} are three evaluations of a single function at regime-specific arguments — \emph{not} three independently defined quantities sharing a family resemblance.
+
+\paragraph{The Smarr partition lives in the recipe, not the function arguments.} In the two horizon regimes (\S\ref{sec:test_mass} and \S\ref{sec:BH}), the escrow ratio computed from $|U|/T_H$ contains an internal factor of $1/2$ arising from the Smarr-formula homogeneity of Schwarzschild thermodynamics: $S_{\mathrm{esc}}^{(\mathrm{II})} = (mc^2/2)/T_H$ and $S_{\mathrm{esc}}^{(\mathrm{III})} = (Mc^2/2)/T_H$, where the rest energy is partitioned because $M$ is homogeneous of degree $1/2$ in the horizon area (treated in \S\ref{sec:BH}). The $1/2$ in the numerator combines with the $4\pi$ in $1/T_H = 4\pi r_s/(\hbar c)$ to produce the $2\pi$ prefactor of the function $\mathcal{N}_{\mathrm{esc}}$ evaluated at the full rest energy and length $r_s$. The partition is therefore a property of the \emph{recipe} (the way the escrow construction extracts $|U|/T$ in Smarr-homogeneous regimes) and not of the function arguments themselves. For the localized-perturbation regime \S\ref{sec:localized}, no such partition appears because there is no Smarr-type area homogeneity to invoke; the recipe extracts the full perturbation energy $\Delta E_A$ and the characteristic distance $d$ directly.
+
+\paragraph{Interpretation.} The dimensionless count $\mathcal{N}_{\mathrm{esc}}(E, L)$ admits the standard Bekenstein-bound reading: it is the upper bound on the entropy (in units of $k_B$) of a system of energy $E$ confined to a region of characteristic size $L$. Equivalently, it measures the action $E L/c$ of the configuration in units of $\hbar/(2\pi)$. The framework's claim is not that this number is novel — it is well-known — but that the escrow recipe $|U|/T$ produces \emph{this particular} dimensionless count in every gravitational regime to which it has been applied.
+
+\subsection{Scope and limitations}
+
+We are explicit about what this work does and does not provide:
+
+\begin{itemize}
+\item \textbf{What this work provides:} A cross-regime organizing observation that the static escrow ratio $|U|/T$ produces the Bekenstein-bound form in three distinct gravitational settings, with empirical anchoring of the Rindler-wedge sector by first-principles lattice computation reproducing the continuum BW identity within lattice-discretization precision ($\sim 0.1\%$), and with the inequality saturation level (maximum $5.4\%$ at Compton scale) characterized across parameter space.
+\item \textbf{What this work does not provide:} A derivation of any individual regime's prediction from the postulate $S_{\mathrm{esc}} = |U|/T$ alone. Each regime's prediction follows from a standard continuum result. The framework's value is the unifying observation, not a new derivation.
+\end{itemize}
+
+\section{The Test-Mass Sector}
+\label{sec:test_mass}
+
+Consider a test mass $m$ at radial coordinate $r$ in Schwarzschild geometry with Schwarzschild radius $r_s = 2GM/c^2$. Let $f(r) = 1 - r_s/r = 1 - 2GM/(rc^2)$ be the metric function. The gravitational binding energy of the test mass relative to spatial infinity is:
+\begin{equation}
+|U_{\mathrm{grav}}(r)| = mc^2\left(1 - \sqrt{f(r)}\right),
+\label{eq:Ugrav_test}
+\end{equation}
+which approaches $mc^2$ as $r \to r_s$. The Hawking temperature \cite{Hawking1975} of the horizon, observed at infinity, is:
+\begin{equation}
+T_H = \frac{\hbar c^3}{8\pi G M k_B} = \frac{\hbar c}{4\pi r_s k_B}.
+\end{equation}
+
+\paragraph{The Smarr partition.} For a Schwarzschild black hole, the Smarr formula $Mc^2 = 2 T_H S_{BH}$ (treated more fully in \S\ref{sec:BH}) implies that a mass deposit $\delta M$ onto the horizon contributes entropy
+\begin{equation}
+\delta S_{BH} = \frac{\delta M \cdot c^2/2}{T_H},
+\end{equation}
+i.e., only half of the rest energy enters the thermodynamic ratio. We adopt this Smarr-partitioned convention for the test-mass escrow ratio in the horizon limit, paralleling the partition used in \S\ref{sec:BH}. We acknowledge that the extension from the horizon (where the Smarr partition is derived from Euler's theorem applied to the Schwarzschild mass functional) to a test mass at the horizon limit is heuristic rather than independently derived: a test particle of rest energy $mc^2$ falling into a Schwarzschild black hole deposits entropy $\delta S_{BH} = mc^2/(2 T_H)$ onto the horizon, and we interpret this expression as also characterizing the escrow ratio of the test mass itself at $r \to r_s$. The structural significance of this choice is not the factor itself, but that the same Smarr partition appearing naturally in horizon thermodynamics also organizes the test-mass horizon-limit expression into Bekenstein form.
+
+Forming the escrow ratio in the limit $r \to r_s$ (test mass approaching the horizon) with the Smarr partition:
+\begin{equation}
+S_{\mathrm{esc}}^{\mathrm{(II)}} = \frac{|U_{\mathrm{grav}}|/2}{T_H} \xrightarrow{r \to r_s} \frac{mc^2/2}{T_H} = \frac{2\pi r_s mc}{\hbar} = \frac{2\pi r_s}{\bar{\lambda}_C},
+\label{eq:Sesc_II}
+\end{equation}
+where $\bar{\lambda}_C \equiv \hbar/(mc) = \lambda_C/(2\pi)$ is the reduced Compton wavelength of the test mass and $\lambda_C = h/(mc)$ is the standard Compton wavelength. In dimensionless form:
+\begin{equation}
+\mathcal{N}_{\mathrm{esc}}^{\mathrm{(II)}} = \frac{2\pi r_s}{\bar{\lambda}_C} = \frac{2\pi r_s \, mc}{\hbar},
+\end{equation}
+which is precisely the Bekenstein bound for a system of energy $mc^2$ confined within radius $r_s$:
+\begin{equation}
+\mathcal{N}_{\mathrm{esc}}^{\mathrm{(II)}} = \frac{2\pi \, (mc^2) \, r_s}{\hbar c} = S_{\mathrm{Bek}}(E=mc^2,\, R=r_s).
+\end{equation}
+
+\begin{remark}
+The Smarr partition is essential to the structural parallel and lives in the \emph{recipe} (the escrow ratio $S_{\mathrm{esc}}^{(\mathrm{II})} = (|U|/2)/T_H$), not in the function arguments. Without it, the unpartitioned ratio $mc^2/T_H$ would overcount by a factor of two relative to the Bekenstein bound, just as $Mc^2/T_H$ would overcount $S_{BH}$ by two without the Smarr partition in \S\ref{sec:BH}. The $1/2$ in the recipe's numerator combines with the $4\pi$ in $1/T_H$ to produce the $2\pi$ prefactor of the function $\mathcal{N}_{\mathrm{esc}}$ evaluated at the full rest energy. The factor of two is not a fudge; it is the same homogeneity-of-mass-in-area structure that produces Smarr's relation.
+\end{remark}
+
+\begin{remark}
+This identification is evaluated specifically at the horizon limit $r \to r_s$ using $T_H$. At intermediate radii $r > r_s$, an alternative formulation using the local Unruh temperature $T_U(r)$ recovers a Newtonian Bekenstein-form $\mathcal{N}_{\mathrm{esc}} \propto 2\pi r/\bar{\lambda}_C$; however, $T_U(r)$ diverges in the $r \to r_s$ limit, so a smooth interpolation between the local-Unruh formulation at $r > r_s$ and the Hawking-temperature identification at $r = r_s$ requires explicit Tolman redshifting \cite{Tolman1930} between the two reference frames. We defer the unified $T_U \to T_H$ smooth-interpolation treatment to future work; the horizon-limit identification suffices for the cross-regime structural observation of this paper.
+\end{remark}
+
+This is a structural identity check: the Smarr-partitioned escrow ratio reproduces the Bekenstein bound for matter at the horizon-saturation scale.
+
+\section{The Black-Hole Horizon Sector}
+\label{sec:BH}
+
+For a stationary, uncharged, non-rotating black hole, the Smarr formula \cite{Smarr1973} gives:
+\begin{equation}
+Mc^2 = 2 T_H S_{BH},
+\label{eq:smarr}
+\end{equation}
+where $S_{BH} = A/(4\ell_P^2)$ is the Bekenstein-Hawking entropy with $\ell_P$ the Planck length and $A$ the horizon area. Equation~\ref{eq:smarr} is a homogeneity statement: $M$ is homogeneous of degree $1/2$ in the area $A$ for a Schwarzschild horizon, and Euler's theorem yields $Mc^2 = 2 (\partial M c^2 / \partial A) A = 2 T_H S_{BH}$.
+
+Identifying $|U_{\mathrm{grav}}| = Mc^2/2$ (the Smarr-formula partition of total mass into horizon contribution) and $T = T_H$:
+\begin{equation}
+S_{\mathrm{esc}}^{\mathrm{(III)}} = \frac{Mc^2/2}{T_H} = S_{BH} = \frac{A}{4\ell_P^2}.
+\label{eq:Sesc_III}
+\end{equation}
+In dimensionless form, the recipe's result is the evaluation $\mathcal{N}_{\mathrm{esc}}(Mc^2, r_s)$ of the escrow function of \S\ref{sec:Nesc_family} — with the $1/2$ from the Smarr partition residing in the recipe (the $Mc^2/2$ numerator of $S_{\mathrm{esc}}^{(\mathrm{III})}$ in Eq.~\ref{eq:Sesc_III}) rather than in the function argument:
+\begin{equation}
+\mathcal{N}_{\mathrm{esc}}^{\mathrm{(III)}} = \mathcal{N}_{\mathrm{esc}}\!\left(Mc^2, r_s\right) = \frac{A}{4\ell_P^2} = \frac{4\pi G M^2}{\hbar c} = 4\pi\left(\frac{M}{m_P}\right)^{\!2},
+\label{eq:Nesc_III}
+\end{equation}
+where $m_P = \sqrt{\hbar c/G}$ is the Planck mass. The escrow ratio reproduces the Bekenstein-Hawking entropy exactly. This is a recovery check: the framework is consistent with the known thermodynamic structure of black holes, and the same $|U|/2$ partition in the escrow ratio used in \S\ref{sec:test_mass} arises here from Smarr's relation directly.
+
+\section{The Localized-Perturbation Sector}
+\label{sec:localized}
+
+This is the regime in which the framework's content can be tested by direct computation. We consider a localized energy perturbation of a Minkowski vacuum, with the entangling surface taken to be a half-space cut in a Rindler wedge.
+
+\subsection{The escrow prediction}
+
+For a Rindler observer at proper distance $d$ from the cut, the Unruh temperature is:
+\begin{equation}
+T_U = \frac{\hbar c}{2\pi d k_B}.
+\end{equation}
+For a localized configuration of total in-region energy $\Delta E_A$ at characteristic distance $d$:
+\begin{equation}
+S_{\mathrm{esc}}^{\mathrm{(IV)}} = \frac{\Delta E_A}{T_U} = \frac{2\pi \, \Delta E_A \, d}{\hbar c}.
+\label{eq:Sesc_IV}
+\end{equation}
+This is the evaluation $\mathcal{N}_{\mathrm{esc}}(\Delta E_A, d)$ of the escrow function of \S\ref{sec:Nesc_family}:
+\begin{equation}
+\mathcal{N}_{\mathrm{esc}}^{\mathrm{(IV)}} = \mathcal{N}_{\mathrm{esc}}(\Delta E_A, d) = \frac{2\pi \, \Delta E_A \, d}{\hbar c}.
+\label{eq:Nesc_IV}
+\end{equation}
+
+We will show this is precisely the Bekenstein bound on $\Delta S_{\mathrm{EE}}$ for the configuration, derivable from BW theorem and the first law of entanglement.
+
+\subsection{Derivation of the Escrow Form of the Casini--BW Inequality}
+
+\begin{theorem}[Escrow Form of the Casini--BW Inequality, conditional on moment-positivity]
+\label{thm:escrow}
+Let $\rho$ be a state of a free scalar quantum field theory that differs from the Minkowski vacuum by a localized energy perturbation, with energy density $\Delta T_{00}(x) = \langle T_{00}(x)\rangle_\rho - \langle T_{00}(x)\rangle_{\mathrm{vac}}$ supported within distance $d$ from the entangling surface of a half-space Rindler bipartition. Let $\Delta E_A = \int_A \Delta T_{00}(x)\, dx$ be the total in-region energy. Suppose the configuration satisfies the moment-bound condition
+\begin{equation}
+\int_A x\, \Delta T_{00}(x)\, dx \leq d \cdot \Delta E_A \quad \text{(moment-positivity assumption)}.
+\label{eq:moment_assumption}
+\end{equation}
+Then
+\begin{equation}
+\Delta S_{\mathrm{EE}} \leq \frac{2\pi \, \Delta E_A \, d}{\hbar c}.
+\label{eq:escrow_inequality}
+\end{equation}
+The moment-bound condition holds rigorously when $\Delta T_{00}(x) \geq 0$ pointwise. For QFT states where vacuum polarization can produce regions of negative $\Delta T_{00}$, the condition is not guaranteed in general; we verify it empirically in Section~\ref{sec:lattice} for the protocols studied here (Table~\ref{tab:moment}, ratios $0.98$--$0.999$ across parameter combinations).
+\end{theorem}
+
+\begin{proof}
+The derivation proceeds in three steps.
+
+\textbf{Step 1 (BW identification).} For a half-space Rindler bipartition of Minkowski vacuum, the Bisognano-Wichmann theorem identifies the vacuum modular Hamiltonian with the boost generator:
+\begin{equation}
+K_A = 2\pi \int_{x \in A} x \, T_{00}(x) \, dx.
+\end{equation}
+For any state $\rho$, the change in modular-Hamiltonian expectation is:
+\begin{equation}
+\Delta\langle K_A\rangle = 2\pi \int_A x \, \Delta T_{00}(x) \, dx.
+\label{eq:BW_change}
+\end{equation}
+
+\textbf{Step 2 (First law of entanglement).} The Wall identity \cite{Wall2011} decomposes the modular Hamiltonian change as:
+\begin{equation}
+\Delta\langle K_A\rangle = \Delta S_{\mathrm{EE}} + S_{\mathrm{rel}}(\rho \,\|\, \rho_{\mathrm{vac}}),
+\end{equation}
+where $S_{\mathrm{rel}}(\rho \,\|\, \rho_{\mathrm{vac}}) \geq 0$ by Klein's inequality. Therefore:
+\begin{equation}
+\Delta S_{\mathrm{EE}} \leq \Delta\langle K_A\rangle.
+\label{eq:first_law}
+\end{equation}
+
+\textbf{Step 3 (Moment bound).} By the moment-positivity assumption (Eq.~\ref{eq:moment_assumption}),
+\begin{equation}
+\int_A x \, \Delta T_{00}(x) \, dx \leq d \cdot \int_A \Delta T_{00}(x) \, dx = d \cdot \Delta E_A.
+\label{eq:moment}
+\end{equation}
+
+Combining Steps 1 and 3:
+\begin{equation}
+\Delta\langle K_A\rangle = 2\pi \int_A x \, \Delta T_{00}(x) \, dx \leq 2\pi \, d \, \Delta E_A.
+\label{eq:K_bound}
+\end{equation}
+
+Chaining Eq.~\ref{eq:first_law} and Eq.~\ref{eq:K_bound}:
+\begin{equation}
+\Delta S_{\mathrm{EE}} \leq \Delta\langle K_A\rangle \leq \frac{2\pi \, \Delta E_A \, d}{\hbar c}.
+\end{equation}
+This is the Escrow Inequality.
+\end{proof}
+
+\begin{remark}
+Theorem~\ref{thm:escrow} reproduces Casini's QFT derivation of the Bekenstein bound \cite{Casini2008}, with the escrow postulate $S_{\mathrm{esc}} = |U|/T$ identifying the right-hand-side bound. The two contributions are complementary: Casini provides the proof; the escrow framework provides the cross-regime interpretation.
+\end{remark}
+
+\begin{remark}
+\label{rem:K_equality}
+The boost-generator expectation $\Delta\langle K_A^{\mathrm{boost}}\rangle = 2\pi \int_A x \Delta T_{00} \, dx$ is an \emph{equality}, not an inequality, by direct evaluation. For point perturbations at distance $d$, this evaluates exactly to $2\pi \, d \, \Delta E_A$. The inequality emerges only when this is converted to a bound on $\Delta S_{\mathrm{EE}}$ via the first law of entanglement, which introduces the (always non-negative) relative entropy.
+\end{remark}
+
+\subsection{Lattice Verification}
+\label{sec:lattice}
+
+We verify the Escrow Inequality on a $1{+}1$-dimensional lattice scalar field theory. The lattice methodology — free-scalar discretization, Gaussian-state covariance machinery, Williamson decomposition for symplectic eigenvalues, and Bisognano-Wichmann identification of the boost generator with the modular Hamiltonian — follows the protocol of \cite{Whitmer2026Lattice}, which examined the literal bipartition-entropy reading of the escrow postulate (ruled out by 10$^{56}$ orders of magnitude across a 295-point parameter grid) and the modular-Hamiltonian reading (partial survival in 1+1D within a small-$d_1$ window). The present work tests the bound on $\Delta S_{\mathrm{EE}}$ given by Theorem~\ref{thm:escrow}, which is the surviving content of the framework's Rindler-wedge prediction in the inequality-on-$\Delta S_{\mathrm{EE}}$ form.
+
+The lattice discretization is:
+\begin{equation}
+H = \frac{1}{2}\sum_i \left[\pi_i^2 + (\phi_{i+1} - \phi_i)^2 + m_i^2 \phi_i^2\right],
+\end{equation}
+where the sum runs over $N$ sites with Dirichlet boundary conditions and $m_i^2$ is the (possibly site-dependent) mass-squared. This is the standard discretized harmonic chain whose entanglement properties have been studied extensively in \cite{Audenaert2002}; for the general methodology of entanglement-entropy computation in free quantum field theory we follow the framework of \cite{CasiniHuerta2009}. The Gaussian vacuum is constructed by diagonalizing the resulting quadratic Hamiltonian; entanglement entropies and modular Hamiltonians are computed via Williamson decomposition of reduced covariance matrices.
+
+Two protocols are examined:
+
+\paragraph{Protocol A: Compton wavepacket.} Set $m_i^2 = m^2$ uniformly and prepare a one-particle Gaussian wavepacket of Compton width $\sigma_c = 1/m$ centered at distance $d_1$ from the cut. The perturbed covariance is computed analytically from the wavepacket mode.
+
+\paragraph{Protocol B: Mass perturbation.} Set $m_i^2 = m_{\mathrm{pert}}^2 \delta_{i,d_1}$ (single-site mass insertion at distance $d_1$ from the cut, on a massless background). The ground state is recomputed in the perturbed Hamiltonian.
+
+\subsubsection{Wavepacket protocol results}
+
+For Protocol A with $m = 0.05$, $\sigma_c = 20$, $N = 1200$:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{rrrrr}
+\toprule
+$d_1$ & $\Delta S_{\mathrm{EE}}$ & $\Delta E_A$ & $2\pi d_1 \Delta E_A$ & $\Delta S_{\mathrm{EE}}/\mathrm{bound}$ \\
+\midrule
+20  & 1.228 & 0.045 & 22.70 & 0.054 \\
+40  & 1.356 & 0.053 & 33.58 & 0.040 \\
+80  & 1.386 & 0.055 & 48.78 & 0.028 \\
+100 & 1.386 & 0.056 & 55.76 & 0.025 \\
+200 & 1.386 & 0.056 & 90.61 & 0.015 \\
+300 & 1.386 & 0.056 & 125.46 & 0.011 \\
+\bottomrule
+\end{tabular}
+\caption{Escrow Inequality verification for Compton-wavepacket protocol. Maximum saturation $5.4\%$ at $d_1 \approx \sigma_c$ (Compton scale). The bound is loose and becomes looser at larger $d_1$.}
+\label{tab:wavepacket}
+\end{table}
+
+The saturated value $\Delta S_{\mathrm{EE}} \to 2\ln 2$ for $d_1 \gg \sigma_c$ is the well-known single-mode bosonic Gaussian entropy at occupation $\langle n\rangle = 1$ \cite{AdessoIlluminati2007, HolevoSohma1999}.
+
+\subsubsection{Mass-perturbation protocol results}
+
+For Protocol B with $m_{\mathrm{pert}}^2 = 1$ at single site $d_1$, $N = 800$:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{rrrrr}
+\toprule
+$d_1$ & $\Delta S_{\mathrm{EE}}$ & $\Delta E_A$ & $2\pi d_1 \Delta E_A$ & ratio \\
+\midrule
+5   & $-0.639$ & 0.257 & 8.07 & $-0.079$ \\
+10  & $-0.532$ & 0.257 & 16.12 & $-0.033$ \\
+20  & $-0.421$ & 0.257 & 32.23 & $-0.013$ \\
+40  & $-0.309$ & 0.256 & 64.45 & $-0.005$ \\
+80  & $-0.200$ & 0.256 & 128.87 & $-0.002$ \\
+160 & $-0.100$ & 0.256 & 257.58 & $-0.0004$ \\
+\bottomrule
+\end{tabular}
+\caption{Escrow Inequality verification for mass-perturbation protocol. $\Delta S_{\mathrm{EE}}$ is negative due to vacuum rearrangement, so the bound $\Delta S_{\mathrm{EE}} \leq 2\pi d_1 \Delta E_A/(\hbar c)$ is trivially satisfied with the entire positive RHS as slack. This protocol therefore does not provide a tight verification of the inequality; only Table~\ref{tab:wavepacket} (the Compton-wavepacket protocol, maximum $5.4\%$ saturation) provides a non-trivial test.}
+\label{tab:massp}
+\end{table}
+
+\subsubsection{Boost-generator equality verification}
+
+To verify the BW identification (Step 1 of Theorem~\ref{thm:escrow}), we compare the modular Hamiltonian expectation computed two ways: via the lattice modular Hamiltonian (Williamson decomposition) versus via direct evaluation of the boost generator $K^{\mathrm{boost}}_A = 2\pi \sum_{i \in A} (i - \mathrm{cut}) \cdot T_{00}(i)$.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{rrrrr}
+\toprule
+$N$ & $d_1$ & $m_{\mathrm{pert}}^2$ & $\Delta\langle K^{\mathrm{boost}}_A\rangle / (2\pi d_1 \Delta E_A)$ \\
+\midrule
+200 & 40 & 1.0 & 0.99884 \\
+200 & 80 & 1.0 & 0.99899 \\
+400 & 80 & 1.0 & 0.99937 \\
+400 & 160 & 1.0 & 0.99943 \\
+800 & 80 & 1.0 & 0.99938 \\
+800 & 160 & 1.0 & 0.99967 \\
+800 & 320 & 1.0 & 0.99969 \\
+1200 & 40 & 0.5 & 0.99585 \\
+1200 & 80 & 2.0 & 0.99992 \\
+1200 & 160 & 5.0 & 1.00013 \\
+\bottomrule
+\end{tabular}
+\caption{Boost-generator equality verification. Mean ratio $0.99913 \pm 0.00122$ across 10 parameter combinations. This validates Step 1 of Theorem~\ref{thm:escrow} (BW identification of the boost generator with the continuum modular Hamiltonian).}
+\label{tab:boost}
+\end{table}
+
+\subsubsection{Moment-inequality verification}
+
+For mass-perturbation Protocol B, we verify Step 3 of the proof (Eq.~\ref{eq:moment}):
+
+\begin{table}[h]
+\centering
+\begin{tabular}{rrrr}
+\toprule
+$d_1$ & $\int_A x \Delta T_{00}$ & $d_1 \cdot \int_A \Delta T_{00}$ & ratio \\
+\midrule
+5  & 1.261 & 1.284 & 0.982 \\
+10 & 2.544 & 2.566 & 0.991 \\
+20 & 5.108 & 5.130 & 0.996 \\
+40 & 10.235 & 10.258 & 0.998 \\
+80 & 20.485 & 20.510 & 0.999 \\
+160 & 40.967 & 40.994 & 0.999 \\
+\bottomrule
+\end{tabular}
+\caption{Moment-inequality verification. The ratio is consistently below 1, validating Eq.~\ref{eq:moment}. The slight gap arises from negative-$\Delta T_{00}$ regions due to vacuum polarization, which reduce (rather than violate) the first moment.}
+\label{tab:moment}
+\end{table}
+
+\subsection{Saturation conditions and structural observations}
+
+The Escrow Inequality is generally loose: saturation requires both $S_{\mathrm{rel}} \to 0$ and saturation of the moment bound (Eq.~\ref{eq:moment}). The first condition requires fine-tuned coherent states (the perturbed state must be modular-flow-aligned with the vacuum); the second requires all energy to be concentrated at the maximum extent $d$.
+
+For generic Compton-localized states, both conditions fail by large margins. The maximum saturation observed in our protocols is $5.4\%$, occurring at the Compton scale $d_1 \approx \sigma_c$ in the wavepacket protocol.
+
+\section{Cross-Regime Synthesis}
+
+The three regimes are three evaluations of the single escrow function $\mathcal{N}_{\mathrm{esc}}(E, L) = 2\pi E L/(\hbar c)$ of \S\ref{sec:Nesc_family} at regime-specific arguments extracted by the recipe $|U|/T$:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lccccc}
+\toprule
+Regime & $|U|/T$ recipe & $T$ & $E$ & $L$ & $\mathcal{N}_{\mathrm{esc}}(E,L)$ \\
+\midrule
+\S\ref{sec:test_mass} Test mass & $(mc^2/2)/T_H$ & $T_H$ & $mc^2$ & $r_s$ & $2\pi r_s/\bar{\lambda}_C$ \\
+\S\ref{sec:BH} BH horizon & $(Mc^2/2)/T_H$ & $T_H$ & $Mc^2$ & $r_s$ & $4\pi(M/m_P)^2$ \\
+\S\ref{sec:localized} Localized matter & $\Delta E_A/T_U$ & $T_U$ & $\Delta E_A$ & $d$ & $2\pi \Delta E_A d/(\hbar c)$ \\
+\bottomrule
+\end{tabular}
+\caption{Cross-regime structural form of the escrow recipe. Column ``$|U|/T$ recipe'' shows the escrow construction in each regime, with the Smarr partition $(\text{rest~energy})/2$ residing in the numerator for \S\ref{sec:test_mass} and \S\ref{sec:BH}; this partition is a property of the recipe (the way $|U|/T$ is extracted in Smarr-homogeneous regimes) rather than of the function. The function $\mathcal{N}_{\mathrm{esc}}(E, L) = 2\pi E L/(\hbar c)$ — identical in form to the Bekenstein-bound saturation value — is then evaluated at the regime-specific energy $E$ and length scale $L$. All three regimes land on the Bekenstein form. The function is not new; the recipe is the framework's contribution.}
+\label{tab:cross_regime}
+\end{table}
+
+The framework's content is the observation that the same one-function recipe, applied across three qualitatively distinct gravitational settings, always evaluates to the Bekenstein form $2\pi E L/(\hbar c)$. We make no claim to derive any individual prediction from the postulate alone; each follows from a standard continuum result (Bekenstein 1981 for \S\ref{sec:test_mass}; Smarr 1973 for \S\ref{sec:BH}; Casini 2008 for \S\ref{sec:localized}). The unifying observation is the contribution.
+
+\section{Guardrails and Falsifiability}
+\label{sec:guardrails}
+
+We are explicit about what the framework does \emph{not} claim, and what would constitute falsification.
+
+\subsection{Retracted Claims}
+
+The development of this framework involved multiple iterations across earlier preprints. We explicitly retract the following claims that appeared in versions v0.6 and earlier and did not survive subsequent audit:
+
+\begin{itemize}
+\item A specific universal prefactor of $1/30$ in the Rindler-wedge modular Hamiltonian content (this value, first reported in \cite{Whitmer2026Lattice} as an approximate small-$d_1$ window observation in 1+1D, was subsequently determined to be a window-fitting artifact rather than a universal saturation prefactor — at larger $d_1$ the local exponent decreases smoothly into a sublinear decay tail).
+\item ``Halving per spatial dimension'' of the saturation prefactor (not reproducible under independent verification; depends on the specific perturbation protocol chosen).
+\item A direct equality $\Delta\langle K\rangle = 2\pi m d_1$ identified with rest mass $m$ (the correct identification is with total perturbation energy $\Delta E_A$, not rest mass; and the relation is an equality of the boost generator with $2\pi d \Delta E_A$, not of the lattice modular Hamiltonian).
+\item A claim that $\Delta S_{\mathrm{EE}} = 2\ln 2$ per particle is a derivation from the escrow postulate (it is a textbook result of Gaussian quantum information \cite{AdessoIlluminati2007, HolevoSohma1999}, consistent with the framework but not derived from it).
+\item A previous five-step derivation of an inequality $\Delta\langle K\rangle \leq 2\pi E d$ which contained a logic gap in its final step (the corrected statement is the bound on $\Delta S_{\mathrm{EE}}$ given in Theorem~\ref{thm:escrow}).
+\end{itemize}
+
+\subsection{Falsifiability}
+
+The framework's empirical content can be falsified by:
+
+\begin{enumerate}
+\item \textbf{Inequality violation:} Discovery of any localized perturbation protocol producing $\Delta S_{\mathrm{EE}} > 2\pi \Delta E_A d/(\hbar c)$ in free QFT. (Equivalent to falsifying Casini's bound.)
+\item \textbf{Cross-regime form violation:} Discovery of a gravitational regime in which $|U|/T$ does not produce the Bekenstein-bound saturation form $2\pi E R/(\hbar c)$.
+\item \textbf{Boost-generator equality violation:} Discovery of a parameter regime in which $\Delta\langle K^{\mathrm{boost}}_A\rangle / (2\pi d \Delta E_A)$ deviates substantially from unity in continuum BW theory.
+\end{enumerate}
+
+None of these has been found in the present work or in cross-validation against other systems.
+
+\section{Discussion}
+
+\subsection{What the framework is not, and what it does not derive}
+
+The framework is not a quantum theory of gravity, nor a derivation of the Bekenstein bound from a deeper principle, nor a source of new numerical predictions. Calling the cross-regime observation a ``level jump'' in physical understanding would overstate the contribution. Specifically:
+
+\begin{itemize}
+\item The Bekenstein bound itself is not derived from the escrow postulate; it follows from the BW theorem and the first law of entanglement \cite{Casini2008}.
+\item The Bekenstein-Hawking entropy is not derived from the escrow postulate; it follows from the Smarr formula \cite{Smarr1973}.
+\item The specific values of $\Delta S_{\mathrm{EE}}$ for one-particle states ($2\ln 2$) and multi-particle states ($N \cdot 2\ln 2$) follow from standard Gaussian quantum information \cite{AdessoIlluminati2007, HolevoSohma1999}, not from the framework.
+\end{itemize}
+
+The framework's content is restricted to the observation that the same recipe $|U|/T$ produces the Bekenstein-saturation form $\mathcal{N}_{\mathrm{esc}}(E, L) = 2\pi E L/(\hbar c)$ across three regimes, providing a unifying interpretive structure.
+
+\subsection{Why the cross-regime recurrence is not algebraically trivial}
+
+A skeptical reader may ask whether the cross-regime appearance of the Bekenstein form is a tautology, on either of two grounds: (i) that all three regimes already \emph{contain} the combination $2\pi E L/(\hbar c)$ by the way their underlying derivations are set up, so that any organizing variable would algebraically produce this form; or (ii) that the combination $E L/(\hbar c)$ is the unique dimensionless ratio constructible from $(E, L, \hbar, c)$, so the appearance of this form is dimensionally forced once one commits to organizing entropy by energy and length.
+
+The second concern is partly valid. Given the inputs $(E, L, \hbar, c)$ and the requirement of a dimensionless output, $EL/(\hbar c)$ is indeed the unique combination; the factor $2\pi$ is conventional from \cite{Bekenstein1981}. The function $\mathcal{N}_{\mathrm{esc}}$ is therefore dimensionally inevitable once $(E, L)$ have been chosen as the inputs — which is why the present work does not claim novelty for the function itself.
+
+The framework's claim is narrower: that the static escrow construction $|U|/T$ — without invoking any auxiliary length or energy scale beyond what each gravitational regime supplies internally — extracts a specific $(E, L)$ pair in each regime and that the resulting $\mathcal{N}_{\mathrm{esc}}(E, L)$ equals the regime's Bekenstein-form result with the correct prefactor. This is the content the dimensional argument does not deliver: it is not dimensional analysis but a specific structural recurrence under a specific recipe.
+
+To address the first concern: the three derivations come from structurally distinct mathematical frameworks. The Bekenstein bound (\S\ref{sec:test_mass}) is an information-theoretic statement about entropy capacity in a region of given energy. The Smarr formula (\S\ref{sec:BH}) is a classical-thermodynamic homogeneity statement about $M$ as a function of horizon area, derived from Euler's theorem applied to the Schwarzschild mass functional. The BW-Casini bound (\S\ref{sec:localized}) is a relative-entropy inequality on the half-space modular Hamiltonian of a free QFT. These are structurally distinct frameworks — capacity theory, classical thermodynamic homogeneity, and von Neumann algebraic modular theory — even though one structural link does exist (Casini derives the Bekenstein bound from BW theory, so the \S\ref{sec:test_mass} and \S\ref{sec:localized} sectors share a modular-theoretic foundation via Casini's 2008 result). The Smarr-vs-modular contrast, however, is genuine: the homogeneity-of-$M$-in-area argument is a classical thermodynamic identity independent of any modular structure, and its agreement with the modular-theoretic results under the recipe $|U|/T$ is not algebraically forced. The observation-dependence of entropy structures across these distinct frameworks has been previously emphasized in \cite{Marolf2003}.
+
+\paragraph{Uniqueness of the recipe is not established.} We have not shown that $|U|/T$ is the \emph{only} recipe that produces a cross-regime Bekenstein-form result; we have shown only that it is \emph{one} recipe that does. A natural question for future work is whether the recipe is unique under specified constraints (e.g., among ratios that are linear in regime-specific binding energy, invoke only the relevant horizon temperature, and require no auxiliary length scale), or whether a family of recipes produces equivalent recurrences. The recurrence observed here is therefore evidence of structural consistency, not yet of structural necessity.
+
+We do not claim that the recurrence reflects a deeper unifying principle; we claim only that it is real, reproducible, and worth naming.
+
+\subsection{What the framework is}
+
+The framework is a defensible organizing principle that:
+
+\begin{itemize}
+\item Reproduces known results in three regimes (Bekenstein bound, Bekenstein-Hawking entropy, Casini bound) under a single structural form.
+\item Identifies the static escrow ratio $|U|/T$ as a recurring structural ratio across distinct sectors of gravitational and entanglement thermodynamics.
+\item Provides a clear interpretive dictionary connecting matter-side entanglement physics (Casini) to horizon-side entropy (Smarr) to test-mass kinematics (Bekenstein).
+\item Is anchored by first-principles lattice computation that reproduces the BW identity within lattice-discretization precision in the Rindler-wedge sector.
+\end{itemize}
+
+\subsection{Open directions}
+
+Several directions remain open for future work:
+
+\begin{itemize}
+\item \textbf{Higher-dimensional lattice verification.} The lattice tests presented here are $1{+}1$-dimensional. Extension to $2{+}1$D and $3{+}1$D would test whether the cross-regime form generalizes to higher dimensions in a non-trivial way; \cite{Whitmer2026Lattice} reports preliminary 3+1D modular-Hamiltonian observations indicating that BW recovery is dimension-dependent.
+\item \textbf{Curved-space sectors.} The framework's \S\ref{sec:test_mass} identification used a Schwarzschild background. \cite{Whitmer2026Translation} extends the horizon recovery to Reissner-Nordström and Kerr via the appropriate Smarr formulas; whether the full recipe-and-evaluation structure of \S\ref{sec:Nesc_family} survives the inclusion of charge and angular momentum (and what regime-specific $(E, L)$ pairs the recipe extracts in those cases) remains to be worked out in detail.
+\item \textbf{Analog-gravity empirical tests.} \cite{Whitmer2026Phonon} derives a complementary non-equilibrium efficiency bound for Bose-Einstein condensate analog gravity, predicting a 17\% efficiency suppression in BEC phonon extraction. While that bound arises from Verlinde-based non-equilibrium thermodynamics rather than from the static escrow recipe of the present work, both belong to the same family of thermodynamic-bound constructions and a unified treatment would strengthen the empirical foundation of the framework.
+\item \textbf{Sharper saturation conditions.} The Escrow Inequality is generally loose. Characterizing the states that saturate the bound (beyond the well-known limit of coherent states modular-aligned with the vacuum) would identify the "Bekenstein-bound saturating" sector of QFT states.
+\end{itemize}
+
+\section{Conclusion}
+
+We have presented the gravitational entropy escrow framework as a cross-regime organizing observation rather than a derivation. The static escrow recipe $|U|/T$ extracts a regime-specific energy $E$ and length scale $L$ from the gravitational binding energy and horizon temperature; the dimensionless function $\mathcal{N}_{\mathrm{esc}}(E, L) = 2\pi E L/(\hbar c)$ — identical in form to the Bekenstein-bound saturation value — is then evaluated at these arguments. Three distinct gravitational regimes (the test-mass sector at the horizon limit via the Smarr partition, the black-hole horizon sector via the Smarr formula, and the localized-perturbation sector via Casini's BW-derivation of the Bekenstein bound on entanglement entropy) all evaluate to the Bekenstein form under this single recipe. The function is Bekenstein's; the recipe is the framework's contribution.
+
+The framework's specific empirical claim is the inequality of Theorem~\ref{thm:escrow} — the escrow form of the Casini--Bisognano--Wichmann bound, with the escrow postulate identifying the right-hand side. Direct lattice computation verifies the inequality across mass-perturbation and Compton-wavepacket protocols; the underlying BW identity is reproduced within lattice-discretization precision ($\sim 0.1\%$) and the bound itself is generally loose (maximum $5.4\%$ saturation observed).
+
+We have been explicit about what the framework does not provide: new derivations from the postulate $|U|/T$, new numerical predictions beyond standard continuum results, or a deeper foundational structure. The contribution is the unifying observation, properly anchored and properly bounded in scope.
+
+\section*{Acknowledgments}
+
+This manuscript represents v1.3 of a research program developed across multiple iterations and is the fifth deposit in the Windstorm Institute gravitational entropy escrow series (Papers 10--14 in the institute's numbering: \cite{Whitmer2026Phonon, Whitmer2026Escrow, Whitmer2026C8, Whitmer2026Lattice, Whitmer2026Translation}). Earlier versions of the present synthesis contained claims that did not survive subsequent audit; these have been explicitly retracted in Section~\ref{sec:guardrails}. The author thanks the adversarial review process — including independent verification runs by separate AI-assisted analysis sessions — for catching errors that would otherwise have appeared in the final manuscript.
+
+This work was conducted at the Windstorm Institute using local high-performance computing resources.
+
+\begin{thebibliography}{99}
+
+\bibitem{Bekenstein1981}
+J. D. Bekenstein, ``Universal upper bound on the entropy-to-energy ratio for bounded systems,''
+\textit{Phys. Rev. D} \textbf{23}, 287 (1981).
+
+\bibitem{Casini2008}
+H. Casini, ``Relative entropy and the Bekenstein bound,''
+\textit{Class. Quantum Grav.} \textbf{25}, 205021 (2008).
+\href{https://arxiv.org/abs/0804.2182}{arXiv:0804.2182}.
+
+\bibitem{BisognanoWichmann1975}
+J. J. Bisognano and E. H. Wichmann, ``On the duality condition for a Hermitian scalar field,''
+\textit{J. Math. Phys.} \textbf{16}, 985 (1975).
+
+\bibitem{BisognanoWichmann1976}
+J. J. Bisognano and E. H. Wichmann, ``On the duality condition for quantum fields,''
+\textit{J. Math. Phys.} \textbf{17}, 303 (1976).
+
+\bibitem{Smarr1973}
+L. Smarr, ``Mass formula for Kerr black holes,''
+\textit{Phys. Rev. Lett.} \textbf{30}, 71 (1973); Erratum: \textbf{30}, 521 (1973).
+
+\bibitem{Wall2011}
+A. C. Wall, ``A proof of the generalized second law for rapidly changing fields and arbitrary horizon slices,''
+\textit{Phys. Rev. D} \textbf{85}, 104049 (2012).
+\href{https://arxiv.org/abs/1105.3445}{arXiv:1105.3445}.
+
+\bibitem{AdessoIlluminati2007}
+G. Adesso and F. Illuminati, ``Entanglement in continuous-variable systems: recent advances and current perspectives,''
+\textit{J. Phys. A: Math. Theor.} \textbf{40}, 7821 (2007).
+
+\bibitem{HolevoSohma1999}
+A. S. Holevo, M. Sohma, and O. Hirota, ``Capacity of quantum Gaussian channels,''
+\textit{Phys. Rev. A} \textbf{59}, 1820 (1999).
+
+\bibitem{Audenaert2002}
+K. M. R. Audenaert, J. Eisert, M. B. Plenio, and R. F. Werner, ``Entanglement properties of the harmonic chain,''
+\textit{Phys. Rev. A} \textbf{66}, 042327 (2002).
+
+\bibitem{CasiniHuerta2009}
+H. Casini and M. Huerta, ``Entanglement entropy in free quantum field theory,''
+\textit{J. Phys. A: Math. Theor.} \textbf{42}, 504007 (2009).
+\href{https://arxiv.org/abs/0905.2562}{arXiv:0905.2562}.
+
+\bibitem{Marolf2003}
+D. Marolf, D. Minic, and S. F. Ross, ``Notes on spacetime thermodynamics and the observer dependence of entropy,''
+\textit{Phys. Rev. D} \textbf{69}, 064006 (2004).
+\href{https://arxiv.org/abs/hep-th/0310022}{arXiv:hep-th/0310022}.
+
+\bibitem{Hawking1975}
+S. W. Hawking, ``Particle creation by black holes,''
+\textit{Commun. Math. Phys.} \textbf{43}, 199 (1975).
+
+\bibitem{Jacobson1995}
+T. Jacobson, ``Thermodynamics of spacetime: the Einstein equation of state,''
+\textit{Phys. Rev. Lett.} \textbf{75}, 1260 (1995).
+\href{https://arxiv.org/abs/gr-qc/9504004}{arXiv:gr-qc/9504004}.
+
+\bibitem{Tolman1930}
+R. C. Tolman and P. Ehrenfest, ``Temperature equilibrium in a static gravitational field,''
+\textit{Phys. Rev.} \textbf{36}, 1791 (1930).
+
+\bibitem{Whitmer2026Phonon}
+G. L. Whitmer III, ``The Phonon Bound: A Non-Equilibrium Efficiency Bound for Phonon Extraction in BEC Analog Gravity Systems with Numerical Tests of the Underlying Thermodynamic Assumption,''
+Windstorm Institute, Fort Ann, NY (2026).
+\href{https://doi.org/10.5281/zenodo.20014391}{DOI: 10.5281/zenodo.20014391}.
+
+\bibitem{Whitmer2026Escrow}
+G. L. Whitmer III, ``Gravitational Entropy Escrow: An Interpretive Synthesis of Thermodynamic Approaches to Gravity,'' v0.6.11,
+Windstorm Institute, Fort Ann, NY (May 2026).
+\href{https://doi.org/10.5281/zenodo.20032023}{DOI: 10.5281/zenodo.20032023}.
+
+\bibitem{Whitmer2026C8}
+G. L. Whitmer III, ``On the Status of Local Entropy-Current Extensions of the Gravitational Entropy Escrow Framework: A Clarification Note,''
+Windstorm Institute, Fort Ann, NY (May 2026).
+\href{https://doi.org/10.5281/zenodo.20041992}{DOI: 10.5281/zenodo.20041992}.
+
+\bibitem{Whitmer2026Lattice}
+G. L. Whitmer III, ``A Lattice Quantum Field Theory Test of the Static Escrow Postulate: 1+1D and 3+1D Falsification with Modular-Hamiltonian Partial Survival,'' v0.7,
+Windstorm Institute, Fort Ann, NY (May 2026).
+\href{https://doi.org/10.5281/zenodo.20057538}{DOI: 10.5281/zenodo.20057538}.
+
+\bibitem{Whitmer2026Translation}
+G. L. Whitmer III, ``Spacetime as Escrow Bookkeeping: A Conceptual Translation of General Relativity into the Static Entropy Escrow Vocabulary,'' v0.5.8,
+Windstorm Institute, Fort Ann, NY (May 2026).
+\href{https://doi.org/10.5281/zenodo.20126091}{DOI: 10.5281/zenodo.20126091}.
+
+\end{thebibliography}
+
+\appendix
+
+\section{Lattice computation details}
+
+\subsection{Free scalar lattice in $1{+}1$D}
+
+The discretized Hamiltonian is:
+\begin{equation}
+H = \frac{1}{2}\sum_{i=1}^{N}\left[\pi_i^2 + (\phi_{i+1} - \phi_i)^2 + m_i^2 \phi_i^2\right],
+\end{equation}
+with Dirichlet boundary conditions ($\phi_0 = \phi_{N+1} = 0$). In matrix form,
+\begin{equation}
+H = \frac{1}{2}(\boldsymbol{\pi}^T \boldsymbol{\pi} + \boldsymbol{\phi}^T K \boldsymbol{\phi}),
+\end{equation}
+where $K_{ii} = 2 + m_i^2$, $K_{i,i\pm 1} = -1$.
+
+Diagonalizing $K = U \Omega^2 U^T$ with $\Omega = \mathrm{diag}(\omega_k)$, the vacuum covariance matrices are:
+\begin{equation}
+X_{ij} = \langle\phi_i \phi_j\rangle_{\mathrm{vac}} = \frac{1}{2}(U \Omega^{-1} U^T)_{ij}, \quad
+P_{ij} = \langle\pi_i \pi_j\rangle_{\mathrm{vac}} = \frac{1}{2}(U \Omega U^T)_{ij}.
+\end{equation}
+
+\subsection{Entanglement entropy via Williamson decomposition}
+
+For a subsystem $A$ with covariance matrices $X_A, P_A$, the symplectic eigenvalues $\nu_k$ are obtained from:
+\begin{equation}
+\nu_k^2 = \mathrm{eig}(X_A P_A).
+\end{equation}
+
+The von Neumann entropy is:
+\begin{equation}
+S = \sum_k \left[(\nu_k + 1/2)\log(\nu_k + 1/2) - (\nu_k - 1/2)\log(\nu_k - 1/2)\right],
+\end{equation}
+with the convention that only $\nu_k > 1/2 + \epsilon$ contribute.
+
+\subsection{Modular Hamiltonian and boost generator}
+
+The lattice modular Hamiltonian $M_K$ acts on the doubled (position+momentum) phase space:
+\begin{equation}
+M_K = i \Omega \log\left[\frac{\gamma + i\Omega/2}{\gamma - i\Omega/2}\right],
+\end{equation}
+where $\gamma = \mathrm{diag}(X_A, P_A)$ and $\Omega$ is the symplectic form.
+
+The boost generator is computed directly as:
+\begin{equation}
+\langle K^{\mathrm{boost}}_A\rangle = 2\pi \sum_{i \in A} (i - \mathrm{cut}) \cdot \langle T_{00}(i)\rangle,
+\end{equation}
+with the lattice energy density:
+\begin{equation}
+T_{00}(i) = \frac{1}{2}\left[\langle\pi_i^2\rangle + \langle(\phi_{i+1} - \phi_i)^2\rangle + m_i^2 \langle\phi_i^2\rangle\right].
+\end{equation}
+
+\subsection{Wavepacket construction}
+
+For Protocol A, a Gaussian wavepacket of width $\sigma_c = 1/m$ centered at site $i_0 = \mathrm{cut} + d_1$ is:
+\begin{equation}
+f_i = \frac{1}{\mathcal{N}} \exp\left[-\frac{(i - i_0)^2}{4\sigma_c^2}\right], \quad \sum_i |f_i|^2 = 1.
+\end{equation}
+
+The perturbed covariances are:
+\begin{equation}
+\delta X_{ij} = 2 (G f)_i (G f)_j, \quad \delta P_{ij} = 2 (H f)_i (H f)_j,
+\end{equation}
+where $G = U \Omega^{-1/2} U^T / \sqrt{2}$ and $H = U \Omega^{1/2} U^T / \sqrt{2}$ are the mode functions.
+
+\subsection{Numerical precision}
+
+All computations performed in double precision. Williamson decomposition uses standard linear algebra routines (LAPACK \texttt{geev}, \texttt{eigh}). Logarithm of matrices uses Schur decomposition (\texttt{scipy.linalg.logm}). Reported precision in tables reflects measurement-to-measurement reproducibility, not absolute numerical accuracy.
+
+\end{document}
