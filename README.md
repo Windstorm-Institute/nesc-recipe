@@ -33,11 +33,11 @@ The function 𝒩<sub>esc</sub>(*E*, *L*) is **identical in form** to the Bekens
 ## Headline points
 
 - **§1 — The 𝒩<sub>esc</sub> function and the escrow recipe.** Two-step recipe: (1) decompose |*U*|/*T* into an energy *E* and length *L*; (2) evaluate 𝒩<sub>esc</sub>(*E*, *L*) = 2π*EL*/(ℏ*c*). The **Smarr partition lives in the recipe**, not the function arguments — explaining why the test-mass and black-hole regimes both produce the 2π prefactor with the full rest energy and Schwarzschild radius.
-- **§2 — Test-mass regime.** *S*<sub>esc</sub> = (*mc*²/2)/*T*<sub>Unruh</sub> = 2π*r*<sub>s</sub>/λ̄<sub>C</sub>. The dimensionless count is the Bekenstein-bound saturation for a test mass of rest energy *mc*² confined to its Schwarzschild radius.
+- **§2 — Test-mass regime.** *S*<sub>esc</sub> = (*mc*²/2)/*T*<sub>H</sub> = 2π*r*<sub>s</sub>/λ̄<sub>C</sub> (evaluated at the horizon limit with the Hawking temperature; the local-Unruh formulation is deferred because *T*<sub>U</sub> diverges at *r* → *r*<sub>s</sub>). The dimensionless count is the Bekenstein-bound saturation for a test mass of rest energy *mc*² confined to its Schwarzschild radius.
 - **§3 — Black-hole regime (Smarr).** *S*<sub>esc</sub> = (*Mc*²/2)/*T*<sub>H</sub> = 4π(*M*/*m*<sub>P</sub>)² = *A*/(4ℓ<sub>P</sub>²). The Bekenstein–Hawking entropy is recovered exactly from the recipe applied to Schwarzschild-Hawking ingredients.
 - **§4 — Rindler-wedge regime (Casini).** For a localized perturbation of energy Δ*E*<sub>A</sub> at characteristic distance *d* from the entangling cut, *S*<sub>esc</sub> = 2π Δ*E*<sub>A</sub>·*d*/(ℏ*c*). This is identified with **Casini's quantum-field-theoretic derivation of the Bekenstein bound** via the Bisognano–Wichmann modular Hamiltonian.
-- **§5 — Lattice verification.** First-principles 1+1D and 3+1D lattice computations across lattice sizes *N* ∈ [200, 1200] and perturbation strengths *m*²<sub>pert</sub> ∈ [0.5, 5.0]. **Boost-generator BW identification at 0.087% mean accuracy** across 10 parameter combinations (Table 3). Casini–BW inequality verified within max **5.4% saturation** at the Compton scale.
-- **§7 — Theorem 1 (conditional).** Properly stated and properly proved with explicit conditional dependence on (a) the Bisognano–Wichmann theorem, (b) the validity of Casini's bound, (c) the moment-positivity assumption empirically validated at 0.98–0.999. The framework's claim is conditional on these three standard results — none of them are re-derived here.
+- **§4.3 — Lattice verification.** First-principles 1+1D lattice computations across lattice sizes *N* ∈ [200, 1200] and perturbation strengths *m*²<sub>pert</sub> ∈ [0.5, 5.0] (higher-dimensional tests deferred to future work). **Boost-generator moment identity confirmed at 0.087% mean accuracy** across 10 parameter combinations (Table 3) — a Step-3 moment-concentration check, not a lattice reproduction of the BW modular-Hamiltonian identification, which does not hold at these sizes. Casini–BW inequality satisfied within max **5.4% saturation** at the Compton scale.
+- **§4.2 — Theorem 1 (conditional).** The Escrow form of the Casini–BW inequality on Δ*S*<sub>EE</sub> for the Rindler-wedge sector — properly stated and proved conditional on the moment-positivity assumption (empirically validated at 0.98–0.999), resting on (a) the Bisognano–Wichmann theorem and (b) the first law of entanglement. None of these standard results are re-derived here.
 
 ## What this paper does NOT claim
 
@@ -48,9 +48,9 @@ The paper is explicit (§1.2):
 - It does **not** establish uniqueness — multiple recipes could conceivably produce the Bekenstein form in these three regimes; the framework's recipe is one such, not the only one (§7.2).
 - The framework's value is the **unifying observation**, not a new derivation.
 
-## Five pre-registered retractions, three falsifiability conditions
+## Five retracted claims, three falsifiability conditions
 
-The paper lists five specific conditions under which named claims are retracted (§7) and three falsifiability conditions for the cross-regime observation (§7.3). These are pre-registered before the evidence that would trigger them arrives.
+The paper retracts five specific claims from v0.6 and earlier that did not survive subsequent audit (§6.1) and lists three falsifiability conditions for the framework's empirical content (§6.2). The retractions are retrospective corrections, not pre-registered future conditions.
 
 ## Read the Paper
 
@@ -62,7 +62,7 @@ The paper lists five specific conditions under which named claims are retracted 
 
 ## Reproduction code
 
-**[Windstorm-Labs/nesc-recipe](https://github.com/Windstorm-Labs/nesc-recipe)** — `lattice_1d_modular.py` (canonical 1+1D computation reproducing Table 3's BW identification to 0.087% mean accuracy) and `lattice_3d_modular.py` (3+1D companion).
+**[Windstorm-Labs/nesc-recipe](https://github.com/Windstorm-Labs/nesc-recipe)** — `lattice_1d_modular.py` and `lattice_3d_modular.py`, the Paper 13 modular-Hamiltonian (Δ*K*) lattice scripts, shipped for cross-dimensional context. They do not by themselves reproduce Paper 15's Tables 1–4.
 
 ## In the Series
 
