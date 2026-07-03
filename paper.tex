@@ -95,7 +95,7 @@ Here $\bar{\lambda}_C = \hbar/(mc)$ is the test mass's reduced Compton wavelengt
 We are explicit about what this work does and does not provide:
 
 \begin{itemize}
-\item \textbf{What this work provides:} A cross-regime organizing observation that the static escrow ratio $|U|/T$ produces the Bekenstein-bound form in three distinct gravitational settings, with empirical anchoring of the Rindler-wedge sector by first-principles lattice computation reproducing the continuum BW identity within lattice-discretization precision ($\sim 0.1\%$), and with the inequality saturation level (maximum $5.4\%$ at Compton scale) characterized across parameter space.
+\item \textbf{What this work provides:} A cross-regime organizing observation that the static escrow ratio $|U|/T$ produces the Bekenstein-bound form in three distinct gravitational settings, with empirical anchoring of the Rindler-wedge sector by first-principles lattice computation confirming the boost-generator moment identity (Step~3 of Theorem~\ref{thm:escrow}) within lattice-discretization precision ($\sim 0.1\%$), and with the inequality saturation level (maximum $5.4\%$ at Compton scale) characterized across parameter space. We emphasize that the lattice half-chain modular Hamiltonian does \emph{not} reproduce the boost generator at these sizes (the partial-survival prefactor of order $1/30$ reported in \cite{Whitmer2026Lattice}); the Bisognano-Wichmann identification underlying Step~1 of Theorem~\ref{thm:escrow} is taken from the continuum theorem, not established by the lattice.
 \item \textbf{What this work does not provide:} A derivation of any individual regime's prediction from the postulate $S_{\mathrm{esc}} = |U|/T$ alone. Each regime's prediction follows from a standard continuum result. The framework's value is the unifying observation, not a new derivation.
 \end{itemize}
 
@@ -275,13 +275,13 @@ Two protocols are examined:
 
 \subsubsection{Wavepacket protocol results}
 
-For Protocol A with $m = 0.05$, $\sigma_c = 20$, $N = 1200$:
+For Protocol A with $m = 0.05$, $\sigma_c = 20$, $N = 1200$, the bound is evaluated at the effective support distance $d = d_1 + 3\sigma_c$ (three Gaussian widths beyond the wavepacket center), the smallest distance containing essentially all of the packet's first moment. With $d = d_1$ alone the Gaussian's first moment would exceed $d_1\,\Delta E_A$ and the moment bound (Eq.~\ref{eq:moment}) would not apply.
 
 \begin{table}[h]
 \centering
 \begin{tabular}{rrrrr}
 \toprule
-$d_1$ & $\Delta S_{\mathrm{EE}}$ & $\Delta E_A$ & $2\pi d_1 \Delta E_A$ & $\Delta S_{\mathrm{EE}}/\mathrm{bound}$ \\
+$d_1$ & $\Delta S_{\mathrm{EE}}$ & $\Delta E_A$ & $2\pi (d_1+3\sigma_c) \Delta E_A$ & $\Delta S_{\mathrm{EE}}/\mathrm{bound}$ \\
 \midrule
 20  & 1.228 & 0.045 & 22.70 & 0.054 \\
 40  & 1.356 & 0.053 & 33.58 & 0.040 \\
@@ -319,9 +319,9 @@ $d_1$ & $\Delta S_{\mathrm{EE}}$ & $\Delta E_A$ & $2\pi d_1 \Delta E_A$ & ratio 
 \label{tab:massp}
 \end{table}
 
-\subsubsection{Boost-generator equality verification}
+\subsubsection{Boost-generator moment-concentration verification}
 
-To verify the BW identification (Step 1 of Theorem~\ref{thm:escrow}), we compare the modular Hamiltonian expectation computed two ways: via the lattice modular Hamiltonian (Williamson decomposition) versus via direct evaluation of the boost generator $K^{\mathrm{boost}}_A = 2\pi \sum_{i \in A} (i - \mathrm{cut}) \cdot T_{00}(i)$.
+To verify Step 3 of Theorem~\ref{thm:escrow} (the moment bound, Eq.~\ref{eq:moment}) at the level of the boost generator, we evaluate the continuum boost generator $K^{\mathrm{boost}}_A = 2\pi \sum_{i \in A} (i - \mathrm{cut}) \cdot T_{00}(i)$ on the lattice energy density and compare its first moment $2\pi \int_A x\, \Delta T_{00}\, dx$ to the point-perturbation value $2\pi d_1 \Delta E_A$. This is a check of moment concentration (Remark~\ref{rem:K_equality}), \emph{not} a comparison of the lattice half-chain modular Hamiltonian with the boost generator: the lattice modular Hamiltonian obtained by Williamson decomposition does \emph{not} reproduce the boost generator at these parameters. As reported in \cite{Whitmer2026Lattice} and confirmed by the companion computation, the ratio $\Delta\langle K^{\mathrm{modular}}_A\rangle/(2\pi d_1 \Delta E_A)$ is only $\approx 0.02$--$0.05$ in the small-$d_1$ window (the partial-survival prefactor of order $1/30$). Step 1 (the BW identification of the modular Hamiltonian with the boost generator) therefore rests on the continuum Bisognano-Wichmann theorem alone and is not independently established by the lattice at these sizes.
 
 \begin{table}[h]
 \centering
@@ -341,7 +341,7 @@ $N$ & $d_1$ & $m_{\mathrm{pert}}^2$ & $\Delta\langle K^{\mathrm{boost}}_A\rangle
 1200 & 160 & 5.0 & 1.00013 \\
 \bottomrule
 \end{tabular}
-\caption{Boost-generator equality verification. Mean ratio $0.99913 \pm 0.00122$ across 10 parameter combinations. This validates Step 1 of Theorem~\ref{thm:escrow} (BW identification of the boost generator with the continuum modular Hamiltonian).}
+\caption{Boost-generator moment-concentration verification. Mean ratio $0.99913 \pm 0.00122$ across 10 parameter combinations. This validates Step 3 of Theorem~\ref{thm:escrow} (the moment bound, Eq.~\ref{eq:moment}) at the boost-generator level and confirms Remark~\ref{rem:K_equality} (for a localized perturbation the boost generator's first moment is concentrated at $d_1$). It does \emph{not} test the BW identification of the lattice modular Hamiltonian with the boost generator, which does not hold at these parameters (see \cite{Whitmer2026Lattice}).}
 \label{tab:boost}
 \end{table}
 
@@ -418,7 +418,7 @@ The framework's empirical content can be falsified by:
 \begin{enumerate}
 \item \textbf{Inequality violation:} Discovery of any localized perturbation protocol producing $\Delta S_{\mathrm{EE}} > 2\pi \Delta E_A d/(\hbar c)$ in free QFT. (Equivalent to falsifying Casini's bound.)
 \item \textbf{Cross-regime form violation:} Discovery of a gravitational regime in which $|U|/T$ does not produce the Bekenstein-bound saturation form $2\pi E R/(\hbar c)$.
-\item \textbf{Boost-generator equality violation:} Discovery of a parameter regime in which $\Delta\langle K^{\mathrm{boost}}_A\rangle / (2\pi d \Delta E_A)$ deviates substantially from unity in continuum BW theory.
+\item \textbf{Moment-bound violation:} Discovery of a localized perturbation whose boost-generator first moment $2\pi \int_A x\, \Delta T_{00}\, dx$ exceeds $2\pi d\, \Delta E_A$, where $d$ is the smallest distance containing the support of $\Delta T_{00}$ (a genuine violation of the moment bound, Eq.~\ref{eq:moment}, as opposed to the concentration ratio below unity expected for support spread over $x < d$).
 \end{enumerate}
 
 None of these has been found in the present work or in cross-validation against other systems.
@@ -459,7 +459,7 @@ The framework is a defensible organizing principle that:
 \item Reproduces known results in three regimes (Bekenstein bound, Bekenstein-Hawking entropy, Casini bound) under a single structural form.
 \item Identifies the static escrow ratio $|U|/T$ as a recurring structural ratio across distinct sectors of gravitational and entanglement thermodynamics.
 \item Provides a clear interpretive dictionary connecting matter-side entanglement physics (Casini) to horizon-side entropy (Smarr) to test-mass kinematics (Bekenstein).
-\item Is anchored by first-principles lattice computation that reproduces the BW identity within lattice-discretization precision in the Rindler-wedge sector.
+\item Is anchored by first-principles lattice computation that confirms the boost-generator moment identity (Step~3 of Theorem~\ref{thm:escrow}) within lattice-discretization precision in the Rindler-wedge sector; the BW identification of the lattice modular Hamiltonian with the boost generator is \emph{not} reproduced at these sizes and is taken from the continuum theorem.
 \end{itemize}
 
 \subsection{Open directions}
@@ -477,7 +477,7 @@ Several directions remain open for future work:
 
 We have presented the gravitational entropy escrow framework as a cross-regime organizing observation rather than a derivation. The static escrow recipe $|U|/T$ extracts a regime-specific energy $E$ and length scale $L$ from the gravitational binding energy and horizon temperature; the dimensionless function $\mathcal{N}_{\mathrm{esc}}(E, L) = 2\pi E L/(\hbar c)$ — identical in form to the Bekenstein-bound saturation value — is then evaluated at these arguments. Three distinct gravitational regimes (the test-mass sector at the horizon limit via the Smarr partition, the black-hole horizon sector via the Smarr formula, and the localized-perturbation sector via Casini's BW-derivation of the Bekenstein bound on entanglement entropy) all evaluate to the Bekenstein form under this single recipe. The function is Bekenstein's; the recipe is the framework's contribution.
 
-The framework's specific empirical claim is the inequality of Theorem~\ref{thm:escrow} — the escrow form of the Casini--Bisognano--Wichmann bound, with the escrow postulate identifying the right-hand side. Direct lattice computation verifies the inequality across mass-perturbation and Compton-wavepacket protocols; the underlying BW identity is reproduced within lattice-discretization precision ($\sim 0.1\%$) and the bound itself is generally loose (maximum $5.4\%$ saturation observed).
+The framework's specific empirical claim is the inequality of Theorem~\ref{thm:escrow} — the escrow form of the Casini--Bisognano--Wichmann bound, with the escrow postulate identifying the right-hand side. Direct lattice computation verifies the inequality across mass-perturbation and Compton-wavepacket protocols; the boost-generator moment identity (Step~3) is confirmed within lattice-discretization precision ($\sim 0.1\%$), while the underlying BW identification (Step~1) is \emph{not} reproduced by the lattice modular Hamiltonian at these sizes (per \cite{Whitmer2026Lattice}) and rests on the continuum theorem; the bound itself is generally loose (maximum $5.4\%$ saturation observed).
 
 We have been explicit about what the framework does not provide: new derivations from the postulate $|U|/T$, new numerical predictions beyond standard continuum results, or a deeper foundational structure. The contribution is the unifying observation, properly anchored and properly bounded in scope.
 
