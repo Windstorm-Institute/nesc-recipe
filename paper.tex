@@ -1,35 +1,16 @@
-\documentclass[11pt,a4paper]{article}
-
-\usepackage{amsmath,amssymb,amsthm}
-\usepackage{geometry}
-\geometry{margin=1in}
-\usepackage{hyperref}
-\usepackage{graphicx}
-\usepackage{booktabs}
-\usepackage{cite}
-\usepackage{authblk}
-
-\newtheorem{theorem}{Theorem}
-\newtheorem{proposition}{Proposition}
-\newtheorem{lemma}{Lemma}
-\newtheorem{remark}{Remark}
-\newtheorem{definition}{Definition}
-
+\documentclass[11pt]{article}
+\usepackage{wsi-style}
+\wsirunhead{The Nesc Recipe}
 \title{The $\mathcal{N}_{\mathrm{esc}}$ Recipe: \\
 A Cross-Regime Observation of Bekenstein-Bound Saturation from the Static Escrow Construction $|U|/T$}
-
-\author[1]{Grant Lavell Whitmer III}
-\affil[1]{Windstorm Institute, Fort Ann, NY 12827, USA}
-\affil[ ]{\texttt{ORCID: 0009-0007-3224-755X}}
-
-\date{Version 1.3 \\ May 2026}
-
+\author{Grant Whitmer}
+\date{May 2026}
 \begin{document}
 
 \maketitle
 
 \begin{abstract}
-We propose a static escrow framework for gravitational entropy in which the basic ratio $S_{\mathrm{esc}} = |U|/T$ — gravitational binding energy divided by characteristic temperature — produces the Bekenstein-bound saturation form $\mathcal{N}_{\mathrm{esc}}(E, L) \equiv 2\pi E L/(\hbar c)$ across three distinct regimes: (i) a test mass in Schwarzschild geometry at the horizon limit, (ii) the Bekenstein-Hawking entropy of a black-hole horizon via the Smarr formula, and (iii) the entanglement-entropy change of a localized matter configuration in a Rindler wedge. The dimensionless count $\mathcal{N}_{\mathrm{esc}}(E, L)$ is identical in form to the Bekenstein-bound saturation value; what the framework names is the \emph{recipe} by which $(E, L)$ are extracted from $|U|/T$ in each gravitational regime. The same one-function recipe, applied across three qualitatively distinct settings, evaluates to the Bekenstein form in each. For regime (iii), we identify the framework's prediction with Casini's quantum-field-theoretic derivation of the Bekenstein bound. We provide first-principles lattice verification of the Rindler-wedge inequality across mass-perturbation and Compton-wavepacket protocols, lattice sizes $N \in [200, 1200]$, and perturbation strengths $m_{\mathrm{pert}}^2 \in [0.5, 5.0]$ spanning one order of magnitude. The maximum observed saturation is $5.4\%$ at the Compton scale. The framework is an organizing observation, not a derivation: each regime's prediction follows from a standard continuum result (Bisognano-Wichmann theorem, Smarr formula, Bekenstein bound), while the framework's contribution is the unifying observation that the same recipe $|U|/T$ generates the Bekenstein form in all three. The present work is the fifth deposit in the Windstorm Institute gravitational entropy escrow series \cite{Whitmer2026Phonon, Whitmer2026Escrow, Whitmer2026C8, Whitmer2026Lattice, Whitmer2026Translation} and formalizes the cross-regime $\mathcal{N}_{\mathrm{esc}}$ notation introduced in \cite{Whitmer2026Translation}.
+We propose a static escrow framework for gravitational entropy in which the basic ratio $S_{\mathrm{esc}} = |U|/T$ — gravitational binding energy divided by characteristic temperature — produces the Bekenstein-bound saturation form $\mathcal{N}_{\mathrm{esc}}(E, L) \equiv 2\pi E L/(\hbar c)$ across three distinct regimes: (i) a test mass in Schwarzschild geometry at the horizon limit, (ii) the Bekenstein-Hawking entropy of a black-hole horizon via the Smarr formula, and (iii) the entanglement-entropy change of a localized matter configuration in a Rindler wedge. The dimensionless count $\mathcal{N}_{\mathrm{esc}}(E, L)$ is identical in form to the Bekenstein-bound saturation value; what the framework names is the \emph{recipe} by which $(E, L)$ are extracted from $|U|/T$ in each gravitational regime. The same one-function recipe, applied across three qualitatively distinct settings, evaluates to the Bekenstein form in each. For regime (iii), we identify the framework's prediction with Casini's quantum-field-theoretic derivation of the Bekenstein bound. We provide a lattice check consistent with the Rindler-wedge inequality (Compton-wavepacket and mass-perturbation protocols), together with a moment-concentration check of the boost-generator step across lattice sizes $N \in [200, 1200]$ and perturbation strengths $m_{\mathrm{pert}}^2 \in [0.5, 5.0]$ spanning one order of magnitude. The maximum observed saturation is $5.4\%$ at the Compton scale. The framework is an organizing observation, not a derivation: each regime's prediction follows from a standard continuum result (Bisognano-Wichmann theorem, Smarr formula, Bekenstein bound), while the framework's contribution is the unifying observation that the same recipe $|U|/T$ generates the Bekenstein form in all three. The present work is the fifth deposit in the Windstorm Institute gravitational entropy escrow series \cite{Whitmer2026Phonon, Whitmer2026Escrow, Whitmer2026C8, Whitmer2026Lattice, Whitmer2026Translation} and formalizes the cross-regime $\mathcal{N}_{\mathrm{esc}}$ notation introduced in \cite{Whitmer2026Translation}.
 \end{abstract}
 
 \section{Introduction}
@@ -469,7 +450,7 @@ Several directions remain open for future work:
 \begin{itemize}
 \item \textbf{Higher-dimensional lattice verification.} The lattice tests presented here are $1{+}1$-dimensional. Extension to $2{+}1$D and $3{+}1$D would test whether the cross-regime form generalizes to higher dimensions in a non-trivial way; \cite{Whitmer2026Lattice} reports preliminary 3+1D modular-Hamiltonian observations indicating that BW recovery is dimension-dependent.
 \item \textbf{Curved-space sectors.} The framework's \S\ref{sec:test_mass} identification used a Schwarzschild background. \cite{Whitmer2026Translation} extends the horizon recovery to Reissner-Nordström and Kerr via the appropriate Smarr formulas; whether the full recipe-and-evaluation structure of \S\ref{sec:Nesc_family} survives the inclusion of charge and angular momentum (and what regime-specific $(E, L)$ pairs the recipe extracts in those cases) remains to be worked out in detail.
-\item \textbf{Analog-gravity empirical tests.} \cite{Whitmer2026Phonon} derives a complementary non-equilibrium efficiency bound for Bose-Einstein condensate analog gravity, predicting a 17\% efficiency suppression in BEC phonon extraction. While that bound arises from Verlinde-based non-equilibrium thermodynamics rather than from the static escrow recipe of the present work, both belong to the same family of thermodynamic-bound constructions and a unified treatment would strengthen the empirical foundation of the framework.
+\item \textbf{Analog-gravity empirical tests.} \cite{Whitmer2026Phonon} derives a complementary non-equilibrium efficiency bound for Bose-Einstein condensate analog gravity, predicting a 20\% efficiency suppression in BEC phonon extraction. While that bound arises from Verlinde-based non-equilibrium thermodynamics rather than from the static escrow recipe of the present work, both belong to the same family of thermodynamic-bound constructions and a unified treatment would strengthen the empirical foundation of the framework.
 \item \textbf{Sharper saturation conditions.} The Escrow Inequality is generally loose. Characterizing the states that saturate the bound (beyond the well-known limit of coherent states modular-aligned with the vacuum) would identify the "Bekenstein-bound saturating" sector of QFT states.
 \end{itemize}
 
@@ -477,7 +458,7 @@ Several directions remain open for future work:
 
 We have presented the gravitational entropy escrow framework as a cross-regime organizing observation rather than a derivation. The static escrow recipe $|U|/T$ extracts a regime-specific energy $E$ and length scale $L$ from the gravitational binding energy and horizon temperature; the dimensionless function $\mathcal{N}_{\mathrm{esc}}(E, L) = 2\pi E L/(\hbar c)$ — identical in form to the Bekenstein-bound saturation value — is then evaluated at these arguments. Three distinct gravitational regimes (the test-mass sector at the horizon limit via the Smarr partition, the black-hole horizon sector via the Smarr formula, and the localized-perturbation sector via Casini's BW-derivation of the Bekenstein bound on entanglement entropy) all evaluate to the Bekenstein form under this single recipe. The function is Bekenstein's; the recipe is the framework's contribution.
 
-The framework's specific empirical claim is the inequality of Theorem~\ref{thm:escrow} — the escrow form of the Casini--Bisognano--Wichmann bound, with the escrow postulate identifying the right-hand side. Direct lattice computation verifies the inequality across mass-perturbation and Compton-wavepacket protocols; the boost-generator moment identity (Step~3) is confirmed within lattice-discretization precision ($\sim 0.1\%$), while the underlying BW identification (Step~1) is \emph{not} reproduced by the lattice modular Hamiltonian at these sizes (per \cite{Whitmer2026Lattice}) and rests on the continuum theorem; the bound itself is generally loose (maximum $5.4\%$ saturation observed).
+The framework's specific empirical claim is the inequality of Theorem~\ref{thm:escrow} — the escrow form of the Casini--Bisognano--Wichmann bound, with the escrow postulate identifying the right-hand side. Direct lattice computation confirms the inequality holds in both the mass-perturbation and Compton-wavepacket protocols; only the wavepacket protocol provides a non-trivial (non-trivially-saturated) test, the mass-perturbation protocol satisfying it trivially with $\Delta S_{\mathrm{EE}}<0$; the boost-generator moment identity (Step~3) is confirmed within lattice-discretization precision ($\sim 0.1\%$), while the underlying BW identification (Step~1) is \emph{not} reproduced by the lattice modular Hamiltonian at these sizes (per \cite{Whitmer2026Lattice}) and rests on the continuum theorem; the bound itself is generally loose (maximum $5.4\%$ saturation observed).
 
 We have been explicit about what the framework does not provide: new derivations from the postulate $|U|/T$, new numerical predictions beyond standard continuum results, or a deeper foundational structure. The contribution is the unifying observation, properly anchored and properly bounded in scope.
 
@@ -486,6 +467,9 @@ We have been explicit about what the framework does not provide: new derivations
 This manuscript represents v1.3 of a research program developed across multiple iterations and is the fifth deposit in the Windstorm Institute gravitational entropy escrow series (Papers 10--14 in the institute's numbering: \cite{Whitmer2026Phonon, Whitmer2026Escrow, Whitmer2026C8, Whitmer2026Lattice, Whitmer2026Translation}). Earlier versions of the present synthesis contained claims that did not survive subsequent audit; these have been explicitly retracted in Section~\ref{sec:guardrails}. The author thanks the adversarial review process — including independent verification runs by separate AI-assisted analysis sessions — for catching errors that would otherwise have appeared in the final manuscript.
 
 This work was conducted at the Windstorm Institute using local high-performance computing resources.
+
+\subsection*{Data, Code \& Resources}
+\noindent Manuscript source and archived record: \url{https://github.com/Windstorm-Institute/nesc-recipe} (Zenodo: \href{https://doi.org/10.5281/zenodo.20145105}{10.5281/zenodo.20145105}). Experiments, datasets, and analysis code: \url{https://github.com/Windstorm-Labs/nesc-recipe}. Windstorm Institute: \url{https://windstorminstitute.org}. Windstorm Labs: \url{https://windstormlabs.com}.
 
 \begin{thebibliography}{99}
 
@@ -553,27 +537,27 @@ R. C. Tolman and P. Ehrenfest, ``Temperature equilibrium in a static gravitation
 \bibitem{Whitmer2026Phonon}
 G. L. Whitmer III, ``The Phonon Bound: A Non-Equilibrium Efficiency Bound for Phonon Extraction in BEC Analog Gravity Systems with Numerical Tests of the Underlying Thermodynamic Assumption,''
 Windstorm Institute, Fort Ann, NY (2026).
-\href{https://doi.org/10.5281/zenodo.20014391}{DOI: 10.5281/zenodo.20014391}.
+\href{https://doi.org/10.5281/zenodo.20014390}{DOI: 10.5281/zenodo.20014390}.
 
 \bibitem{Whitmer2026Escrow}
 G. L. Whitmer III, ``Gravitational Entropy Escrow: An Interpretive Synthesis of Thermodynamic Approaches to Gravity,'' v0.6.11,
 Windstorm Institute, Fort Ann, NY (May 2026).
-\href{https://doi.org/10.5281/zenodo.20032023}{DOI: 10.5281/zenodo.20032023}.
+\href{https://doi.org/10.5281/zenodo.20031931}{DOI: 10.5281/zenodo.20031931}.
 
 \bibitem{Whitmer2026C8}
 G. L. Whitmer III, ``On the Status of Local Entropy-Current Extensions of the Gravitational Entropy Escrow Framework: A Clarification Note,''
 Windstorm Institute, Fort Ann, NY (May 2026).
-\href{https://doi.org/10.5281/zenodo.20041992}{DOI: 10.5281/zenodo.20041992}.
+\href{https://doi.org/10.5281/zenodo.20041991}{DOI: 10.5281/zenodo.20041991}.
 
 \bibitem{Whitmer2026Lattice}
-G. L. Whitmer III, ``A Lattice Quantum Field Theory Test of the Static Escrow Postulate: 1+1D and 3+1D Falsification with Modular-Hamiltonian Partial Survival,'' v0.7,
+G. L. Whitmer III, ``A Lattice QFT Test of the Static Escrow Postulate: 1+1D and 3+1D Falsification, with a Suggestive Modular-Hamiltonian Window in 1+1D,''
 Windstorm Institute, Fort Ann, NY (May 2026).
-\href{https://doi.org/10.5281/zenodo.20057538}{DOI: 10.5281/zenodo.20057538}.
+\href{https://doi.org/10.5281/zenodo.20057537}{DOI: 10.5281/zenodo.20057537}.
 
 \bibitem{Whitmer2026Translation}
 G. L. Whitmer III, ``Spacetime as Escrow Bookkeeping: A Conceptual Translation of General Relativity into the Static Entropy Escrow Vocabulary,'' v0.5.8,
 Windstorm Institute, Fort Ann, NY (May 2026).
-\href{https://doi.org/10.5281/zenodo.20126091}{DOI: 10.5281/zenodo.20126091}.
+\href{https://doi.org/10.5281/zenodo.20126090}{DOI: 10.5281/zenodo.20126090}.
 
 \end{thebibliography}
 
