@@ -4,14 +4,14 @@
 
 Grant Lavell Whitmer III · Windstorm Labs, The Windstorm Institute · Fort Ann, NY, USA
 
-[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.20145106-blue)](https://doi.org/10.5281/zenodo.20145106)
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.20145105-blue)](https://doi.org/10.5281/zenodo.20145105)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey)](https://creativecommons.org/licenses/by/4.0/)
 [![Track: Entropic Bounds](https://img.shields.io/badge/Track-2_·_Entropic_Bounds-8b5cf6)](https://windstorminstitute.org/#track2)
 
-**Zenodo**: [10.5281/zenodo.20145106](https://doi.org/10.5281/zenodo.20145106) · **Current version: v1.3** (May 2026)
+**Zenodo**: [10.5281/zenodo.20145105](https://doi.org/10.5281/zenodo.20145105) · **Current version: v1.3** (May 2026)
 
-**Continuation of:** [Paper 14 — Spacetime as Escrow Bookkeeping](https://github.com/Windstorm-Institute/escrow-spacetime) ([10.5281/zenodo.20126091](https://doi.org/10.5281/zenodo.20126091))
-**Companion to:** [Paper 11 — Gravitational Entropy Escrow](https://github.com/Windstorm-Institute/gravitational-entropy-escrow) ([10.5281/zenodo.20032023](https://doi.org/10.5281/zenodo.20032023)) · [Paper 13 — Lattice QFT Test](https://github.com/Windstorm-Institute/lattice-qft-test) ([10.5281/zenodo.20057538](https://doi.org/10.5281/zenodo.20057538))
+**Continuation of:** [Paper 14 — Spacetime as Escrow Bookkeeping](https://github.com/Windstorm-Institute/escrow-spacetime) ([10.5281/zenodo.20126090](https://doi.org/10.5281/zenodo.20126090))
+**Companion to:** [Paper 11 — Gravitational Entropy Escrow](https://github.com/Windstorm-Institute/gravitational-entropy-escrow) ([10.5281/zenodo.20031931](https://doi.org/10.5281/zenodo.20031931)) · [Paper 13 — Lattice QFT Test](https://github.com/Windstorm-Institute/lattice-qft-test) ([10.5281/zenodo.20057537](https://doi.org/10.5281/zenodo.20057537))
 
 ---
 
@@ -56,8 +56,7 @@ The paper retracts five specific claims from v0.6 and earlier that did not survi
 
 - **[paper.pdf](paper.pdf)** — full academic paper (16 pages)
 - **[paper.tex](paper.tex)** — LaTeX source
-- **[article.html](article.html)** — accessible web version
-- **[Zenodo record](https://doi.org/10.5281/zenodo.20145106)** — archived with DOI
+- **[Zenodo record](https://doi.org/10.5281/zenodo.20145105)** — archived with DOI
 - **[Website article](https://windstorminstitute.org/articles/nesc-recipe.html)** — long-form companion
 
 ## Reproduction code
@@ -70,13 +69,13 @@ The paper retracts five specific claims from v0.6 and earlier that did not survi
 
 | # | Paper | DOI | Labs mirror |
 |---|---|---|---|
-| 10 | [Phonon Extraction Bound (BEC Analog Gravity)](https://github.com/Windstorm-Institute/phonon-extraction-bound) | [10.5281/zenodo.20014391](https://doi.org/10.5281/zenodo.20014391) | [Labs](https://github.com/Windstorm-Labs/phonon-extraction-bound) |
-| 11 | [Gravitational Entropy Escrow](https://github.com/Windstorm-Institute/gravitational-entropy-escrow) *(framework paper)* | [10.5281/zenodo.20032023](https://doi.org/10.5281/zenodo.20032023) | [Labs](https://github.com/Windstorm-Labs/gravitational-entropy-escrow) |
-| 12 | [C8 Clarification Note](https://github.com/Windstorm-Institute/c8-clarification-note) *(companion to Paper 11)* | [10.5281/zenodo.20041992](https://doi.org/10.5281/zenodo.20041992) | [Labs](https://github.com/Windstorm-Labs/c8-clarification-note) |
-| 13 | [Lattice QFT Test of the Static Escrow Postulate](https://github.com/Windstorm-Institute/lattice-qft-test) *(supplement to Paper 11)* | [10.5281/zenodo.20057538](https://doi.org/10.5281/zenodo.20057538) | [Labs](https://github.com/Windstorm-Labs/lattice-qft-test) |
-| 14 | [Spacetime as Escrow Bookkeeping](https://github.com/Windstorm-Institute/escrow-spacetime) *(translation of standard GR results)* | [10.5281/zenodo.20126091](https://doi.org/10.5281/zenodo.20126091) | [Labs](https://github.com/Windstorm-Labs/escrow-spacetime) |
-| 15 | [The 𝒩<sub>esc</sub> Recipe](https://github.com/Windstorm-Institute/nesc-recipe) *(this paper — formalizes 𝒩<sub>esc</sub> as a function; continuation of Paper 14)* | [10.5281/zenodo.20145106](https://doi.org/10.5281/zenodo.20145106) | [Labs](https://github.com/Windstorm-Labs/nesc-recipe) |
-| 16 | [The Compton Corollary](https://github.com/Windstorm-Institute/compton-corollary) *(short Bekenstein observation; uses 𝒩<sub>esc</sub> notation only, recipe not invoked)* | [10.5281/zenodo.20163451](https://doi.org/10.5281/zenodo.20163451) | [Labs](https://github.com/Windstorm-Labs/compton-corollary) |
+| 10 | [Phonon Extraction Bound (BEC Analog Gravity)](https://github.com/Windstorm-Institute/phonon-extraction-bound) | [10.5281/zenodo.20014390](https://doi.org/10.5281/zenodo.20014390) | [Labs](https://github.com/Windstorm-Labs/phonon-extraction-bound) |
+| 11 | [Gravitational Entropy Escrow](https://github.com/Windstorm-Institute/gravitational-entropy-escrow) *(framework paper)* | [10.5281/zenodo.20031931](https://doi.org/10.5281/zenodo.20031931) | [Labs](https://github.com/Windstorm-Labs/gravitational-entropy-escrow) |
+| 12 | [C8 Clarification Note](https://github.com/Windstorm-Institute/c8-clarification-note) *(companion to Paper 11)* | [10.5281/zenodo.20041991](https://doi.org/10.5281/zenodo.20041991) | [Labs](https://github.com/Windstorm-Labs/c8-clarification-note) |
+| 13 | [Lattice QFT Test of the Static Escrow Postulate](https://github.com/Windstorm-Institute/lattice-qft-test) *(supplement to Paper 11)* | [10.5281/zenodo.20057537](https://doi.org/10.5281/zenodo.20057537) | [Labs](https://github.com/Windstorm-Labs/lattice-qft-test) |
+| 14 | [Spacetime as Escrow Bookkeeping](https://github.com/Windstorm-Institute/escrow-spacetime) *(translation of standard GR results)* | [10.5281/zenodo.20126090](https://doi.org/10.5281/zenodo.20126090) | [Labs](https://github.com/Windstorm-Labs/escrow-spacetime) |
+| 15 | [The 𝒩<sub>esc</sub> Recipe](https://github.com/Windstorm-Institute/nesc-recipe) *(this paper — formalizes 𝒩<sub>esc</sub> as a function; continuation of Paper 14)* | [10.5281/zenodo.20145105](https://doi.org/10.5281/zenodo.20145105) | [Labs](https://github.com/Windstorm-Labs/nesc-recipe) |
+| 16 | [The Compton Corollary](https://github.com/Windstorm-Institute/compton-corollary) *(short Bekenstein observation; uses 𝒩<sub>esc</sub> notation only, recipe not invoked)* | [10.5281/zenodo.20163450](https://doi.org/10.5281/zenodo.20163450) | [Labs](https://github.com/Windstorm-Labs/compton-corollary) |
 
 ### Track 1 — The Throughput Basin · 9 papers (Papers 1–9 globally; arc complete)
 
@@ -96,8 +95,8 @@ See the [Windstorm Institute org profile](https://github.com/Windstorm-Institute
   year         = 2026,
   publisher    = {Zenodo},
   version      = {v1.3},
-  doi          = {10.5281/zenodo.20145106},
-  url          = {https://doi.org/10.5281/zenodo.20145106}
+  doi          = {10.5281/zenodo.20145105},
+  url          = {https://doi.org/10.5281/zenodo.20145105}
 }
 ```
 
